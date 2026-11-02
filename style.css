@@ -180,3 +180,23 @@ label { display: block; margin: 12px 0 4px; color: var(--muted); font-size: .9re
 
 .tile-link { display: block; color: var(--text); }
 .tile-link:hover { color: var(--text); }
+
+/* ---------- footer ---------- */
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  text-align: center;
+  background: rgb(10, 4, 22);
+  color: #fff;
+  padding: 10px 24px;
+  font-family: "Courier New", Consolas, monospace;
+  border-top: 1px solid var(--line);
+}
+.footer h3 { font-size: 1em; font-weight: 400; margin: .5em 0; color: #fff; }
+.footer-icons { list-style: none; display: flex; justify-content: center; gap: 22px; margin: .5em 0; padding: 0; }
+.footer-icons a { color: #fff; display: inline-flex; transition: color .2s, transform .2s; }
+.footer-icons a:hover { color: var(--accent); transform: translateY(-2px); }
+@media (max-width: 700px) {
+  .footer { grid-template-columns: 1fr; }
+}

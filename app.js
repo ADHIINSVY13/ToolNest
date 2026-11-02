@@ -59,6 +59,8 @@ const store = {
   },
 };
 
+document.getElementById("year").textContent = new Date().getFullYear();
+
 /* ---------- theme ---------- */
 function applyTheme(t) {
   document.documentElement.dataset.theme = t;

@@ -167,7 +167,7 @@ function home() {
         <h1>My little drawer of <span class="scribble">tools &amp; games
           <svg viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M2 9 C 40 2, 70 13, 110 6 S 170 4, 198 8" fill="none" stroke="var(--accent2)" stroke-width="4" stroke-linecap="round"/></svg>
         </span></h1>
-        <p class="lead">Hi, I'm ADHIINSVY13. A small collection of everyday tools and games, built with plain HTML, CSS and JavaScript.</p>
+        <p class="lead">Hi, I'm Divyanshi Sahu. I made ToolNest while learning web development: a small collection of everyday tools and games.</p>
       </div>
       <div class="hero-art">🪺<small>come on in!</small></div>
     </section>

@@ -165,13 +165,7 @@ function home() {
         <h1>My little drawer of <span class="scribble">tools &amp; games
           <svg viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M2 9 C 40 2, 70 13, 110 6 S 170 4, 198 8" fill="none" stroke="var(--accent2)" stroke-width="4" stroke-linecap="round"/></svg>
         </span></h1>
-        <p class="lead">I'm Divyanshi. I built ToolNest while learning JavaScript, so everything here is hand-coded and nothing needs a sign-up. Use a tool, play a game, pin your favourites.</p>
-        <div class="chips">
-          <span class="chip">${TOOLS.filter((t) => t.type === "tool").length} tools</span>
-          <span class="chip">${TOOLS.filter((t) => t.type === "game").length} games</span>
-          <span class="chip">no ads</span>
-          <span class="chip">free forever</span>
-        </div>
+        <p class="lead">Hi, I'm ADHIINSVY13. A small collection of everyday tools and games, built with plain HTML, CSS and JavaScript.</p>
       </div>
       <div class="hero-art">🪺<small>come on in!</small></div>
     </section>

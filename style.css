@@ -66,8 +66,6 @@ nav a.active { background: var(--accent); color: #fff; }
 main { flex: 1; width: 100%; max-width: 1080px; margin: 0 auto; padding: 28px 20px 48px; animation: fade .35s ease; }
 @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
-footer { text-align: center; padding: 24px 16px; color: var(--muted); font-size: .88rem; border-top: 1px dashed var(--line); }
-footer p { margin: 4px 0; }
 
 /* ---------- hero ---------- */
 .hero { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; margin-bottom: 30px; }

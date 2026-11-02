@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0618" />
+  <meta name="description" content="ToolNest: a little drawer of tools and games I built while learning JavaScript. By Divyanshi Sahu." />
+  <title>ToolNest | Tools & Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="confetti"></canvas>
+
+  <header class="topbar">
+    <a href="#home" class="brand" aria-label="ToolNest home">
+      <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+        <path d="M6 24c0-9 6-16 14-16s14 7 14 16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <path d="M4 26h32l-4 9H8z" fill="var(--accent)" />
+        <circle cx="20" cy="17" r="3.2" fill="var(--accent2)" />
+      </svg>
+      <span>Tool<b>Nest</b></span>
+    </a>
+    <nav>
+      <a href="#home" data-filter="all">All</a>
+      <a href="#home" data-filter="tool">Tools</a>
+      <a href="#home" data-filter="game">Games</a>
+      <button id="themeBtn" class="icon-btn" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button>
+    </nav>
+  </header>
+
+  <main id="app"></main>
+
+  <footer>
+    <p>Handmade with plain HTML, CSS &amp; JavaScript, no frameworks, no sign-ups.</p>
+    <p>
+      By <a href="https://github.com/ADHIINSVY13" target="_blank" rel="noopener noreferrer">Divyanshi Sahu</a>
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

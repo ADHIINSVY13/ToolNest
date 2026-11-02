@@ -8,7 +8,7 @@ A small collection of everyday tools and games, built with plain HTML, CSS and J
 
 ## Includes
 
-- **Tools:** Calculator, Unit Converter, Password Generator, Stopwatch & Timer, Word Counter, BMI Calculator
+- **Tools:** Calculator, Unit Converter, Password Generator, Stopwatch & Timer, Word Counter, QR Code Generator, BMI Calculator
 - **Games:** Tic Tac Toe, Rock Paper Scissors, Number Guess, Memory Match
 
 Also has search, pinned favourites, a light/dark theme and saved scores.

@@ -7,6 +7,7 @@ const TOOLS = [
   { id: "password", icon: "🔑", name: "Password Generator", type: "tool", desc: "Create strong random passwords.", render: passwordGen },
   { id: "stopwatch", icon: "⏱️", name: "Stopwatch & Timer", type: "tool", desc: "Time laps or count down.", render: stopwatch },
   { id: "wordcount", icon: "📝", name: "Word Counter", type: "tool", desc: "Words, characters and reading time.", render: wordCounter },
+  { id: "qrcode", icon: "🔳", name: "QR Code Generator", type: "tool", desc: "Turn any link or text into a QR code.", render: qrGenerator },
   { id: "bmi", icon: "⚖️", name: "BMI Calculator", type: "tool", desc: "Check your body mass index.", render: bmi },
   { id: "tictactoe", icon: "❌", name: "Tic Tac Toe", type: "game", desc: "Two players, one board.", render: ticTacToe },
   { id: "rps", icon: "✂️", name: "Rock Paper Scissors", type: "game", desc: "Beat the computer.", render: rockPaperScissors },
@@ -21,6 +22,7 @@ const LOOK = {
   password: ["#80ed99", "future-you will thank you"],
   stopwatch: ["#ffd166", "on your marks..."],
   wordcount: ["#f78fb3", "for essays and captions"],
+  qrcode: ["#b8f2e6", "scan me!"],
   bmi: ["#9b8cff", "just a number, be kind"],
   tictactoe: ["#ff7a59", "grab a friend"],
   rps: ["#4cc9f0", "rock beats scissors, always"],
@@ -700,4 +702,59 @@ function memoryGame(el) {
   });
   $("#new", el).onclick = reset;
   reset();
+}
+
+/* ---------- QR code generator ---------- */
+function qrGenerator(el) {
+  el.innerHTML = `
+    <label>Link or text</label>
+    <input id="qrText" type="text" placeholder="https://example.com" />
+    <div class="row" style="margin-top:14px"><button id="qrGen">Generate</button><button id="qrDl" class="ghost" disabled>Download PNG</button></div>
+    <p class="center muted" id="qrMsg"></p>
+    <div class="center"><canvas id="qrCanvas" width="256" height="256" style="display:none;background:#fff;border-radius:10px;max-width:100%"></canvas></div>`;
+  const canvas = $("#qrCanvas", el);
+  const msg = $("#qrMsg", el);
+  const dl = $("#qrDl", el);
+
+  function generate() {
+    const text = $("#qrText", el).value.trim();
+    if (!text) {
+      msg.textContent = "Type something first.";
+      return;
+    }
+    if (typeof qrcode === "undefined") {
+      msg.textContent = "The QR library didn't load. Check your connection and refresh.";
+      return;
+    }
+    const qr = qrcode(0, "M");
+    qr.addData(text);
+    qr.make();
+    const count = qr.getModuleCount();
+    const margin = 4;
+    const cell = Math.floor(256 / (count + margin * 2)) || 1;
+    const size = cell * (count + margin * 2);
+    canvas.width = size;
+    canvas.height = size;
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(0, 0, size, size);
+    ctx.fillStyle = "#000";
+    for (let r = 0; r < count; r++) {
+      for (let c = 0; c < count; c++) {
+        if (qr.isDark(r, c)) ctx.fillRect((c + margin) * cell, (r + margin) * cell, cell, cell);
+      }
+    }
+    canvas.style.display = "inline-block";
+    dl.disabled = false;
+    msg.textContent = "";
+  }
+
+  $("#qrGen", el).onclick = generate;
+  $("#qrText", el).addEventListener("keydown", (e) => e.key === "Enter" && generate());
+  dl.onclick = () => {
+    const a = document.createElement("a");
+    a.href = canvas.toDataURL("image/png");
+    a.download = "qr-code.png";
+    a.click();
+  };
 }

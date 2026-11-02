@@ -2,7 +2,7 @@
 
 A small collection of everyday tools and games, built with plain HTML, CSS and JavaScript.
 
-**Live:** https://adhiinsvy13.github.io/ToolNest/
+**Demo:** https://adhiinsvy13.github.io/ToolNest/
 
 ![ToolNest](screenshot.png)
 
@@ -21,6 +21,4 @@ git clone https://github.com/ADHIINSVY13/ToolNest.git
 
 Open `index.html` in your browser. No install or build needed.
 
-## Author
-
-[ADHIINSVY13](https://github.com/ADHIINSVY13)
+Thanks for stopping by! Feel free to try the tools, break the games, and share any ideas for what to add next.
